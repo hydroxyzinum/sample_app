@@ -1,3 +1,11 @@
 <% provide(:title, "Home") %>
-<h1>Sample App</h1>
-<p>Home page.</p>
+
+<div class="center jumbotron">
+  <h1>Sample App</h1>
+  
+  <p>This is Sample App made by Przemysław Prokopczuk. All rights reserved.</p>
+  
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary btn-custom" %>
+</div>
+
+<%= image_tag("1002023-cut-the-rope.jpg", alt: "Rails logo")%>
