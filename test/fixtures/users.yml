@@ -1,1 +1,4 @@
-# empty
+przemek:
+  name: Przemek Prokopczuk
+  email: przemek.prokopczuk1@gmail.com
+  password_digest: <%= User.digest('password') %>
