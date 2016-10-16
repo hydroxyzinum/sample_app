@@ -4,7 +4,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   
   def setup
     ActionMailer::Base.deliveries.clear
-    @user = users(:przemek)
   end
 
   test "invalid signup information" do
@@ -31,7 +30,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_not user.activated?
     # Try to log in before activation.
     post login_path params: { session: { email: "user@example.com",
-                                         password: 'password'}}
+                                     password: 'password'} }
     assert_not is_logged_in?
     # Invalid activation token
     get edit_account_activation_path("invalid token", email: user.email)

@@ -1,16 +1,10 @@
-<h1>Activate your account</h1>
+<h1>Sample App</h1>
 
-<p>Hello <%= @user.name %>,</p>
+<p>Hi <%= @user.name %>,</p>
 
 <p>
-Thank you for your registration. Now you can use your Sample App made by Przemysław Prokopczuk!
-Click on the link below to activate your account:
+Welcome to the Sample App! Click on the link below to activate your account:
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
-                                                    
-<p>Enjoy your time on the website.</p>
-
-<p>See you later!</p>
-<p><i>Sample App</i></p>

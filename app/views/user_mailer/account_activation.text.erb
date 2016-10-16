@@ -1,11 +1,5 @@
-Hello <%= @user.name %>,
+Hi <%= @user.name %>,
 
-Thank you for your registration. Now you can use your Sample App made by Przemysław Prokopczuk!
-Click on the link below to activate your account:
+Welcome to the Sample App! Click on the link below to activate your account:
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
-
-Enjoy your time on the website.
-
-See you later!
-<i>Sample App</i>
