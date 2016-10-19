@@ -1,0 +1,15 @@
+one:
+  follower: przemek
+  followed: lana
+
+two:
+  follower: przemek
+  followed: malory
+
+three:
+  follower: lana
+  followed: przemek
+
+four:
+  follower: wayne
+  followed: przemek
