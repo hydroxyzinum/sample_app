@@ -1,6 +1,8 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user,   only: [:destroy]
+  before_action :set_posts,      only: [:like, :unlike]
+  
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -18,9 +20,23 @@ class MicropostsController < ApplicationController
     flash[:success] = "Micropost deleted"
     redirect_to request.referrer || root_url
   end
+  
+  def like
+    @post.liked_by current_user
+    redirect_to request.referrer
+  end
+  
+  def unlike
+    @post.disliked_by current_user
+    redirect_to request.referrer
+  end
 
   
   private
+  
+    def set_posts
+      @post = Micropost.find_by(id: params[:id])
+    end
   
     def micropost_params
       params.require(:micropost).permit(:content, :picture)
