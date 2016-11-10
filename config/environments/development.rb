@@ -46,7 +46,7 @@ Rails.application.configure do
   
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'example.com' # Don't use this literally; use your local dev host instead
+  host = 'rails-tutorial-hydroxyzinum.c9users.io'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   # Debug mode disables concatenation and preprocessing of assets.
